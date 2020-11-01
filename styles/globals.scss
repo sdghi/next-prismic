@@ -3,6 +3,8 @@ $background: red;
 
 @import './partials/_reset';
 @import './partials/navigation';
+@import './slices/hero-image.scss';
+@import './slices/text-section.scss';
 
 .container {
     max-width: 1200px;
