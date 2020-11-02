@@ -3,8 +3,8 @@ import { RichText } from 'prismic-reactjs';
 
 const TextSection = ({ data }) => {
     return (
-        <section className="text-section">
-            <div className="container">{RichText.render(data.primary.content)}</div>
+        <section>
+            <div className="container text_section">{RichText.render(data.primary.content)}</div>
         </section>
     );
 };
