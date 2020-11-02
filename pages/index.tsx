@@ -13,7 +13,8 @@ export default function Home({ home }) {
 }
 
 export async function getStaticProps() {
+    const navigation = await client.getSingle('navigation', {});
     const home = await client.getByUID('page', 'home', {}, null);
 
-    return { props: { home } };
+    return { props: { navigation, home } };
 }

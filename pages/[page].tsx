@@ -15,9 +15,10 @@ export default function Page({ page }) {
 }
 
 export async function getStaticProps(context: any) {
+    const navigation = await client.getSingle('navigation', {});
     const page = await client.getByUID('page', context.params.page, {}, null);
 
-    return { props: { page } };
+    return { props: { navigation, page } };
 }
 
 export async function getStaticPaths() {

@@ -28,9 +28,10 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps(context: any) {
+    const navigation = await client.getSingle('navigation', {});
     const post = await client.getByUID('blog_post', context.params.post, {}, null);
 
-    return { props: { post } };
+    return { props: { navigation, post } };
 }
 
 export async function getStaticPaths() {
