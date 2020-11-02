@@ -6,13 +6,13 @@ import MetaInfo from '../../components/MetaInfo';
 
 export default function Blog({ blog, allBlogPosts }) {
     const { title, description, featured_post } = blog.data;
-    const { results } = allBlogPosts;
+
     return (
         <>
             <MetaInfo title={title ? title[0].text : ''} description={description[0].text} />
             <div>
                 <h3>Recent Posts</h3>
-                {results.reverse().map((result) => {
+                {allBlogPosts.reverse().map((result) => {
                     console.log(result);
                     return (
                         <li key={result.id}>
@@ -33,5 +33,5 @@ export async function getStaticProps() {
         orderings: '[document.first_publication_date]'
     });
 
-    return { props: { blog, allBlogPosts } };
+    return { props: { blog, allBlogPosts: allBlogPosts.results.reverse() } };
 }
