@@ -24,7 +24,6 @@ export async function getStaticPaths() {
     const allPages = await client.query(Prismic.Predicates.at('document.type', 'page'));
 
     return {
-        paths: allPages.results.map(({ uid }) => `/${uid}`) || [],
-        fallback: true
+        paths: allPages.results.map(({ uid }) => `/${uid}`) || []
     };
 }

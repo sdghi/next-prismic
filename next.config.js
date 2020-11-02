@@ -1,12 +1,10 @@
+const { execSync } = require('child_process');
+
+const gitCommand = 'git rev-parse HEAD';
+
 module.exports = {
-    target: 'serverless',
-    async redirects() {
-        return [
-            {
-                source: '/home',
-                destination: '/',
-                permanent: true
-            }
-        ];
+    generateBuildId: async () => {
+        // You can, for example, get the latest git commit hash here
+        return execSync(gitCommand).toString().trim();
     }
 };

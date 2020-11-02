@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "postbuild": "next-on-netlify",
+        "export": "next export",
         "start": "next start",
         "lint": "eslint --ext .ts,.tsx,.js"
     },
