@@ -10,23 +10,23 @@ import Carousel from '../slices/Carousel';
 export default function SlicesContainer({ slices }) {
     return (
         <>
-            {slices.map((slice: any, index: number) => {
+            {slices.map((slice: any, i: number) => {
                 const res = (() => {
                     switch (slice.slice_type) {
                         case 'hero_image':
-                            return <HeroImage key={index} data={slice} />;
+                            return <HeroImage key={i} data={slice} />;
                         case 'notification':
-                            return <Notification key={index} data={slice} />;
+                            return <Notification key={i} data={slice} />;
                         case 'text_section':
-                            return <TextSection key={index} data={slice} />;
+                            return <TextSection key={i} data={slice} />;
                         case 'table':
-                            return <Table key={index} data={slice} />;
+                            return <Table key={i} data={slice} />;
                         case 'accordian':
-                            return <Accordian key={index} data={slice} />;
+                            return <Accordian key={i} data={slice} />;
                         case 'tabbed_content':
-                            return <TabbedContent key={index} data={slice} />;
+                            return <TabbedContent key={i} data={slice} />;
                         case 'carousel':
-                            return <Carousel key={index} data={slice} />;
+                            return <Carousel key={i} data={slice} />;
                         default:
                             return null;
                     }
