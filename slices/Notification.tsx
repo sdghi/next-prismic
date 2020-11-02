@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Notification = ({ data }) => {
-    console.log('notification', data);
     return (
         <div className="container">
             <h1>Notification</h1>

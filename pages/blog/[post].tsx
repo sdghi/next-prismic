@@ -38,6 +38,6 @@ export async function getStaticPaths() {
 
     return {
         paths: allPosts.results.map(({ uid }) => `/blog/${uid}`) || [],
-        fallback: true
+        fallback: false
     };
 }
