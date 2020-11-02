@@ -5,6 +5,9 @@ const { client } = require('./prismic-configuration');
 const gitCommand = 'git rev-parse HEAD';
 
 module.exports = {
+    // Target must be experimental-serverless-trace
+    // Your build time will be longer with this option
+    target: 'experimental-serverless-trace',
     generateBuildId: async () => {
         // You can, for example, get the latest git commit hash here
         return execSync(gitCommand).toString().trim();
