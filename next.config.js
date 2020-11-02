@@ -27,7 +27,7 @@ module.exports = {
         });
 
         allPosts.results.forEach((result) => {
-            paths[`/${result.uid}`] = {
+            paths[`/blog/${result.uid}`] = {
                 page: `/blog/[post]`,
                 query: {
                     post: result.uid
