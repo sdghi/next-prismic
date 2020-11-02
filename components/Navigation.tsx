@@ -25,7 +25,7 @@ export default function Navigation() {
         <nav>
             <div className="container nav__nav-container">
                 <h1 className="nav__site-branding">{siteInfo.siteName}</h1>
-                <ul className="nav__nav-items">
+                <ul className="nav__nav-items" data-testid="nav-items-container">
                     {navItems.map((item, index) => {
                         const res = (() => {
                             switch (item.slice_type) {

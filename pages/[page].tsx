@@ -25,6 +25,6 @@ export async function getStaticPaths() {
 
     return {
         paths: allPages.results.map(({ uid }) => `/${uid}`) || [],
-        fallback: true
+        fallback: false
     };
 }
