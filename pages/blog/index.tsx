@@ -10,15 +10,17 @@ export default function Blog({ blog, allBlogPosts }) {
     return (
         <>
             <MetaInfo title={title ? title[0].text : ''} description={description[0].text} />
-            <div>
-                <h3>Recent Posts</h3>
-                {allBlogPosts.reverse().map((result) => (
-                    <li key={result.id}>
-                        <Link as={result} href={result}>
-                            <a>{RichText.render(result.data.document_name)}</a>
-                        </Link>
-                    </li>
-                ))}
+            <div className="container blog__container">
+                <h3 className="blog__heading">Recent Posts</h3>
+                <ul className="blog__all_posts">
+                    {allBlogPosts.reverse().map((result) => (
+                        <li className="blog__post_item" key={result.id}>
+                            <Link as={result} href={result}>
+                                <a>{RichText.render(result.data.document_name)}</a>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </>
     );

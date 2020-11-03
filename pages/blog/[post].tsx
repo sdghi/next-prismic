@@ -2,6 +2,7 @@ import { RichText } from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
 import { client } from '@/utils/prismic-configuration';
 import MetaInfo from '@/components/MetaInfo';
+import FormattedImage from '@/components/FormattedImage';
 
 export default function Post({ post }) {
     const {
@@ -17,7 +18,9 @@ export default function Post({ post }) {
         <>
             <MetaInfo title={meta_title[0].text} description={meta_description[0].text} />
             <article className="container">
-                {featured_image && <img src={featured_image.url} alt={featured_image.alt} />}
+                {featured_image && (
+                    <FormattedImage className="post__featured_image" image={featured_image} />
+                )}
                 {RichText.render(document_name)}
                 <div>{RichText.render(content)}</div>
                 <div>
