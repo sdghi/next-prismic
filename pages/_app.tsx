@@ -1,5 +1,5 @@
-import '../styles/globals.scss';
-import Navigation from '../components/Navigation';
+import '@/styles/globals.scss';
+import Navigation from '@/components/Navigation';
 
 function MyApp({ Component, pageProps }) {
     return (

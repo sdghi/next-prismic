@@ -1,8 +1,8 @@
-import Link from '../../components/Link';
 import Prismic from 'prismic-javascript';
 import { RichText } from 'prismic-reactjs';
-import { client } from '../../prismic-configuration';
-import MetaInfo from '../../components/MetaInfo';
+import { client } from '@/utils/prismic-configuration';
+import Link from '@/components/Link';
+import MetaInfo from '@/components/MetaInfo';
 
 export default function Blog({ blog, allBlogPosts }) {
     const { title, description, featured_post } = blog.data;

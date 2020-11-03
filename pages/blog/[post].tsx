@@ -1,7 +1,7 @@
 import { RichText } from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
-import { client } from '../../prismic-configuration';
-import MetaInfo from '../../components/MetaInfo';
+import { client } from '@/utils/prismic-configuration';
+import MetaInfo from '@/components/MetaInfo';
 
 export default function Post({ post }) {
     const {

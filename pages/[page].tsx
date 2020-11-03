@@ -1,7 +1,7 @@
-import { client } from '../prismic-configuration';
 import Prismic from 'prismic-javascript';
-import MetaInfo from '../components/MetaInfo';
-import SlicesContainer from '../components/SlicesContainer';
+import { client } from '@/utils/prismic-configuration';
+import MetaInfo from '@/components/MetaInfo';
+import SlicesContainer from '@/components/SlicesContainer';
 
 export default function Page({ page }) {
     const { meta_title, meta_description, body } = page.data;

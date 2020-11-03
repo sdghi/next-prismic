@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RichText } from 'prismic-reactjs';
-import { slugify } from '../utils';
+import { slugify } from '@/utils/index';
 
 export default function TabbedContent({ data, startingIndex = 0 }) {
     const [currentTabIndex, setCurrentTabIndex] = useState(startingIndex);
