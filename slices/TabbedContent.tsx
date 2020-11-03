@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { RichText } from 'prismic-reactjs';
+import { slugify } from '../utils';
 
 export default function TabbedContent({ data, startingIndex = 0 }) {
     const [currentTabIndex, setCurrentTabIndex] = useState(startingIndex);
     const tabbedSectionRef = useRef(null);
+    const tabItems = data.items;
 
     function handleKeyDown(e) {
         if (e.which === 37) {
@@ -10,7 +13,7 @@ export default function TabbedContent({ data, startingIndex = 0 }) {
                 setCurrentTabIndex(currentTabIndex - 1);
             }
         } else if (e.which === 39) {
-            if (currentTabIndex < data.length - 1) {
+            if (currentTabIndex < tabItems.length - 1) {
                 setCurrentTabIndex(currentTabIndex + 1);
             }
         } else if (e.which === 40) {
@@ -36,34 +39,34 @@ export default function TabbedContent({ data, startingIndex = 0 }) {
         <section>
             <div ref={tabbedSectionRef} className="tabbed_content">
                 <ul role="tablist" className="tabbed_content__tabs_container">
-                    {data.map((tab, i) => (
+                    {tabItems.map((tab, i) => (
                         <li role="presentation" key={i} className="tabbed_content__tab">
                             <a
                                 className="tabbed_content__tab__link"
-                                id={tab.id}
+                                id={slugify(tab.name[0].text)}
                                 role="tab"
-                                href={`#section-${tab.name}`}
+                                href={`#section-${slugify(tab.name[0].text)}`}
                                 data-index={i}
                                 tabIndex={currentTabIndex !== i ? -1 : 0}
                                 onClick={() => setCurrentTabIndex(i)}
                                 onKeyDown={handleKeyDown}>
-                                {tab.name}
+                                {RichText.render(tab.name)}
                             </a>
                         </li>
                     ))}
                 </ul>
-                {data.map(
+                {tabItems.map(
                     (tab, i) =>
                         currentTabIndex === i && (
                             <section
                                 className="tabbed_content__panel"
                                 key={i}
                                 role="tabpanel"
-                                id={`section-${tab.name}`}
-                                aria-labelledby={tab.id}
-                                dangerouslySetInnerHTML={{ __html: tab.content }}
-                                tabIndex={-1}
-                            />
+                                id={`section-${slugify(tab.name[0].text)}`}
+                                aria-labelledby={slugify(tab.name[0].text)}
+                                tabIndex={-1}>
+                                {RichText.render(tab.content)}
+                            </section>
                         )
                 )}
             </div>

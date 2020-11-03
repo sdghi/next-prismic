@@ -4,11 +4,18 @@ import { client } from '../../prismic-configuration';
 import MetaInfo from '../../components/MetaInfo';
 
 export default function Post({ post }) {
-    const { title, description, content, document_name, tags, featured_image } = post.data;
+    const {
+        meta_title,
+        meta_description,
+        content,
+        document_name,
+        tags,
+        featured_image
+    } = post.data;
 
     return (
         <>
-            <MetaInfo title={title[0].text} description={description[0].text} />
+            <MetaInfo title={meta_title[0].text} description={meta_description[0].text} />
             <article className="container">
                 {featured_image && <img src={featured_image.url} alt={featured_image.alt} />}
                 {RichText.render(document_name)}

@@ -4,11 +4,11 @@ import MetaInfo from '../components/MetaInfo';
 import SlicesContainer from '../components/SlicesContainer';
 
 export default function Page({ page }) {
-    const { title, description, body } = page.data;
+    const { meta_title, meta_description, body } = page.data;
 
     return (
         <>
-            <MetaInfo title={title[0].text} description={description[0].text} />
+            <MetaInfo title={meta_title[0].text} description={meta_description[0].text} />
             <SlicesContainer slices={body} />
         </>
     );

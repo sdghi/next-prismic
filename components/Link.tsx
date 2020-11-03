@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { linkResolver } from '../utils/linkResolver';
+import { linkResolver } from '../utils';
 
 export default function ResolvedLink({ as, href, children }) {
     return (
