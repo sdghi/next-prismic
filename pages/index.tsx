@@ -1,12 +1,12 @@
-import { client } from '../prismic-configuration';
-import MetaInfo from '../components/MetaInfo';
-import SlicesContainer from '../components/SlicesContainer';
+import { client } from '@/utils/prismic-configuration';
+import MetaInfo from '@/components/MetaInfo';
+import SlicesContainer from '@/components/SlicesContainer';
 
 export default function Home({ home }) {
-    const { title, description, body } = home.data;
+    const { meta_title, meta_description, body } = home.data;
     return (
         <>
-            <MetaInfo title={title[0].text} description={description[0].text} />
+            <MetaInfo title={meta_title[0].text} description={meta_description[0].text} />
             <SlicesContainer slices={body} />
         </>
     );

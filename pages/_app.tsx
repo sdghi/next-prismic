@@ -1,10 +1,10 @@
-import '../styles/globals.scss';
-import Navigation from '../components/Navigation';
+import '@/styles/globals.scss';
+import Header from '@/components/Header';
 
 function MyApp({ Component, pageProps }) {
     return (
         <>
-            <Navigation navigation={pageProps.navigation} />
+            <Header navigation={pageProps.navigation} />
             <Component {...pageProps} />
         </>
     );

@@ -12,13 +12,19 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": ["components/*"],
+            "@/utils/*": ["utils/*"],
+            "@/styles/*": ["styles/*"]
+        }
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "prismic-configuration.js",
+        "utils/prismic-configuration.js",
         "pages/_app.js",
         "components/SlicesContainer.js"
     ],

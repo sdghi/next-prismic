@@ -2,9 +2,10 @@
 $background: red;
 
 @import './partials/_reset';
+@import './partials/header';
 @import './partials/navigation';
-@import './slices/hero-image.scss';
-@import './slices/text-section.scss';
+@import './slices/hero-image';
+@import './slices/text-section';
 
 .container {
     max-width: 1200px;
