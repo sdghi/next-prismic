@@ -37,7 +37,7 @@ export default function TabbedContent({ data, startingIndex = 0 }) {
 
     return (
         <section>
-            <div ref={tabbedSectionRef} className="tabbed_content container">
+            <div ref={tabbedSectionRef} className="[ tabbed_content ] [ container ]">
                 <ul role="tablist" className="tabbed_content__tabs_container">
                     {tabItems.map((tab, i) => (
                         <li role="presentation" key={i} className="tabbed_content__tab">

@@ -21,7 +21,7 @@ export default function Table({ data }) {
                                     return (
                                         <th
                                             key={j}
-                                            className="table__content_cell table__row_header"
+                                            className="[ table__content_cell ] [ table__row_header ]"
                                             dangerouslySetInnerHTML={{ __html: cell.content }}
                                         />
                                     );

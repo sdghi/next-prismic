@@ -14,7 +14,7 @@ export default function Navigation({ navigation }) {
     return (
         <nav>
             {navigationItems && (
-                <ul className="nav__nav-items" data-testid="nav-items-container">
+                <ul className="nav__nav_items" data-testid="nav-items-container">
                     {navigationItems.map((item, index) => {
                         const res = (() => {
                             switch (item.slice_type) {
