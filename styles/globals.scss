@@ -2,13 +2,8 @@
 $background: red;
 
 @import './partials/_reset';
+@import './partials/utils';
 @import './partials/header';
 @import './partials/navigation';
 @import './slices/hero-image';
 @import './slices/text-section';
-
-.container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-}
