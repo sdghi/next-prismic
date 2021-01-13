@@ -1,6 +1,16 @@
-# Sae Design Group Project Starter
+# SDG Base
 
-**Stack**
-Next JS, CSS Modules, GSAP
+A project starter for SDG Projects
+
+## Get Started
 
 `npx degit https://github.com/sdghi/next-prismic\#main <app-name>`
+
+## Features
+
+The following are included in SDG Base
+
+-   Next JS
+-   Integration with Prismic
+-   SCSS / PostCSS
+-   Typescript
