@@ -1,5 +1,8 @@
 /* autoprefixer grid: autoplace */
-$background: red;
+body {
+    --breakpoint-small: 768px;
+    --breakpoint-medium: 1024px;
+}
 
 @import './partials/_reset';
 @import './partials/typography';
