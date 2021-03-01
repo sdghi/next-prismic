@@ -4564,12 +4564,10 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
   integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
 
-flex-gap-polyfill@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/flex-gap-polyfill/-/flex-gap-polyfill-1.0.4.tgz#e7c4bf939e2c33ef7c2afdf06873ac36e5963281"
-  integrity sha512-Rj28wgwGuQVow+i5qvBWawDQ+qPMyWGeqigAq9BXWPMSX+8GO+sChz6KyEEJ2rapr2VCIGicjJ2KuckXWfeN7Q==
-  dependencies:
-    postcss "^7.0.35"
+flex-gap-polyfill@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/flex-gap-polyfill/-/flex-gap-polyfill-2.2.1.tgz#869fea499638230f2af5a9875bd9d979a7150ea7"
+  integrity sha512-lb4S73Z7+c/MeigJxlKBNtDTZAezdTunYee0f3jN2fFScG+o0F6n4L8qvRvJMr66W3UER8Cya292H5qRla8/iQ==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -7051,7 +7049,7 @@ postcss@8.1.1:
     nanoid "^3.1.12"
     source-map "^0.6.1"
 
-postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.5, postcss@^7.0.6:
+postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.35"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
   integrity sha512-3QT8bBJeX/S5zKTTjTCIjRF3If4avAT6kqxcASlTWEtAFCb9NH0OUxNDfgZSWdP5fJnBYCMEWkIFfWeugjzYMg==
