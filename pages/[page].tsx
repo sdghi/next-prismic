@@ -14,11 +14,12 @@ export default function Page({ page }) {
     );
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: any, { preview = null, previewData = {} }) {
+    const { ref } = previewData;
     const navigation = await client.getSingle('navigation', {});
-    const page = await client.getByUID('page', context.params.page, {}, null);
+    const page = await client.getByUID('page', context.params.page, ref ? { ref } : null, null);
 
-    return { props: { navigation, page } };
+    return { props: { navigation, page, preview } };
 }
 
 export async function getStaticPaths() {

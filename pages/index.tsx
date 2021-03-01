@@ -12,9 +12,10 @@ export default function Home({ home }) {
     );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview = null, previewData = {} }) {
+    const { ref } = previewData;
     const navigation = await client.getSingle('navigation', {});
-    const home = await client.getByUID('page', 'home', {}, null);
+    const home = await client.getByUID('page', 'home', ref ? { ref } : null, null);
 
-    return { props: { navigation, home } };
+    return { props: { navigation, home, preview } };
 }
