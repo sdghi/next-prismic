@@ -6,7 +6,7 @@ export default function Navigation({ navigation }) {
     const [navigationItems, setNavigationItems] = useState(null);
 
     useEffect(() => {
-        if (navigation.data) {
+        if (navigation?.data) {
             setNavigationItems(navigation.data.body);
         }
     }, [navigation]);
