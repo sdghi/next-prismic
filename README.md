@@ -15,10 +15,6 @@ A starter template for building websites with NextJS, Prismic and Netlify.
 3. **Install dependencies**
    `yarn`
 
-4. **Initialize slice machine**
-   This will create a new instance of slice machine for the specific project
-   `yarn scaffold`
-
 ### Development
 
 Make sure to have the [Netlify Cli](https://docs.netlify.com/cli/get-started/) installed, then run `ntl dev`
@@ -32,6 +28,16 @@ Make sure to have the [Netlify Cli](https://docs.netlify.com/cli/get-started/) i
 ## Prismic
 
 This template uses [Prismic](https://prismic.io) as the HeadlessCMS to manage most of the content. By default it will just contain bare-bones features to get you up and running. All configuration is 100% customizable, you can reference customizing Prismic in the [docs](https://prismic.io/docs/technologies/integrating-with-an-existing-project-javascript).
+
+### Slice Machine (Still in development)
+
+Make sure that you have the [Prismic CLI](https://prismic.io/docs/technologies/install-the-prismic-cli-nextjs) installed and sign up/login depending on the client
+
+**Sign Up**
+`prismic signup`
+
+**Login**
+`prismic login`
 
 # Netlify
 
