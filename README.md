@@ -2,8 +2,26 @@
 
 A starter template for building websites with NextJS, Prismic and Netlify.
 
-**Get Started**
-`npx degit https://github.com/sdghi/next-prismic\#main <app-name>`
+## Get started
+
+### Creating a new project
+
+1. **Create a new project:**
+   `npx degit https://github.com/sdghi/next-prismic\#main <app-name>`
+
+2. **Add env variables**
+   Copy the content from `.env.example` and paste it into a new file called `.env.local`
+
+3. **Install dependencies**
+   `yarn`
+
+4. **Initialize slice machine**
+   This will create a new instance of slice machine for the specific project
+   `yarn scaffold`
+
+### Development
+
+Make sure to have the [Netlify Cli](https://docs.netlify.com/cli/get-started/) installed, then run `ntl dev`
 
 ## Core Features
 
