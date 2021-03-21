@@ -1,7 +1,6 @@
 {
     "plugins": [
         "postcss-flexbugs-fixes",
-        "flex-gap-polyfill",
         [
             "postcss-preset-env",
             {
