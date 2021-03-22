@@ -12,7 +12,8 @@ export default function Home({ home }) {
     );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(ctx) {
+    console.log('context', ctx);
     const navigation = await client.getSingle('navigation', {});
     const home = await client.getByUID('page', 'home', {}, null);
 
