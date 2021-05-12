@@ -1,23 +1,22 @@
-import { NextApiResponse } from 'next';
-import { client } from '@/utils/prismic-configuration';
+import { Client } from '@/utils/prismic';
 import { linkResolver } from '@/utils/linkResolver';
 
-export default async (req, res: NextApiResponse) => {
+export default async (req, res) => {
     const { token: ref, documentId } = req.query;
+    const redirectUrl = await Client(req)
+        .getPreviewResolver(ref, documentId)
+        .resolve(linkResolver, '/');
 
-    // Check the token parameter agains the Prismic SDK
-    const url = await client.getPreviewResolver(ref, documentId).resolve(linkResolver, '/');
-
-    if (!url) {
-        return res.status(404).json({ message: 'Invalid Token' });
+    if (!redirectUrl) {
+        return res.status(401).json({ message: 'Invalid token' });
     }
 
-    // Enable preivew mode by seetin the cookies
-    res.setPreviewData({
-        ref // pass the ref to pages so that they can fetch the draft ref
-    });
+    res.setPreviewData({ ref });
 
-    res.writeHead(301, { Location: `/` });
-
+    res.write(
+        `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${redirectUrl}" />
+    <script>window.location.href = '${redirectUrl}'</script>
+    </head>`
+    );
     res.end();
 };

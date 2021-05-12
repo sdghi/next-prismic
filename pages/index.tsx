@@ -12,10 +12,14 @@ export default function Home({ home }) {
     );
 }
 
-export async function getStaticProps(ctx) {
-    console.log('context', ctx);
-    const navigation = await client.getSingle('navigation', {});
-    const home = await client.getByUID('page', 'home', {}, null);
+export async function getStaticProps({ previewData }) {
+    let home;
 
-    return { props: { navigation, home } };
+    if (previewData?.ref) {
+        home = await client.getByUID('page', 'homepage', { ref: previewData.ref }, null);
+    } else {
+        home = await client.getByUID('page', 'homepage', {}, null);
+    }
+
+    return { props: { home } };
 }
