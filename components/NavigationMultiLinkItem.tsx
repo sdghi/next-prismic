@@ -1,17 +1,16 @@
-import React from 'react';
-import Link from './Link';
+import Link from '@/components/Link';
 
 export default function NavigationMultiLinkItem({ data }) {
-    const { link, title } = data.primary;
+    const { link, label } = data.primary;
     const sublinks = data.items;
     return (
-        <li className="nav__nav-item">
-            <Link link={link}>{title[0].text}</Link>
+        <li className="[ nav__multi_item ] [ nav_item ]">
+            <Link link={link}>{label[0].text}</Link>
 
-            <ul className="nav__sublinks">
+            <ul className="nav__sublinks" role="list">
                 {sublinks.map((sublink, index) => (
                     <li key={index} className="nav__sublink">
-                        <Link link={sublink.link}>{sublink.title[0].text}</Link>
+                        <Link link={sublink.link}>{sublink.label[0].text}</Link>
                     </li>
                 ))}
             </ul>
