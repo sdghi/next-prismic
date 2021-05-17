@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { siteInfo } from '../siteInfo';
 import Navigation from '@/components/Navigation';

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { linkResolver } from '../utils';
+import { linkResolver } from '@/utils/linkResolver';
 
 export default function ResolvedLink({ link, children }) {
     if (link.link_type === 'Web')

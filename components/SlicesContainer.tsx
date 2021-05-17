@@ -1,4 +1,3 @@
-import React from 'react';
 import TextSection from '@/slices/TextSection';
 import Accordian from '@/slices/Accordian';
 import TabbedContent from '@/slices/TabbedContent';
