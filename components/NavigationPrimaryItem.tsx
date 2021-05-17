@@ -1,13 +1,10 @@
-import React from 'react';
-import Link from './Link';
+import Link from '@/components/Link';
 
 export default function NavigationPrimaryItem({ data }) {
-    const { link, title } = data.primary;
+    const { link, label } = data.primary;
     return (
-        <li className="nav__nav-item">
-            <Link link={link}>
-                <a>{title[0].text}</a>
-            </Link>
+        <li className="[ nav_item ]">
+            <Link link={link}>{label[0].text}</Link>
         </li>
     );
 }
