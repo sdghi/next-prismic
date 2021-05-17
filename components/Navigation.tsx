@@ -5,7 +5,7 @@ export default function Navigation({ navigation }) {
     const navItems = navigation.data.body;
 
     return (
-        <nav>
+        <nav className="site_navigation">
             <ul role="list">
                 {navItems.map((item, index) => {
                     const res = (() => {
